@@ -1,6 +1,6 @@
 .card {
     width: 175px;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .card--image {
@@ -19,6 +19,11 @@
 
 .gray {
     color: #918E9B
+}
+
+h2 {
+    font-size: 0.75rem;
+    font-weight: normal;
 }
 
 .bold {
