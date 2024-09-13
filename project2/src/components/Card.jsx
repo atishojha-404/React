@@ -1,14 +1,13 @@
 import "./Card.css"
 
-import cardImagge from "../assets/image1.png"
-import starImage from "../assets/star.png"
+import starImage from "../../public/assets/star.png"
 
-export default function Card() {
+export default function Card(props) {
     return(
         <div className="card">
             <img 
                 className="card--image" 
-                src={cardImagge} 
+                src={props.img} 
                 alt="Card Image"
             />
             <div className="card--stats">
@@ -17,12 +16,12 @@ export default function Card() {
                     src={starImage} 
                     alt="Star Images"
                 />
-                <span>5.0</span>
-                <span className="gray" >(6) • </span>
-                <span className="gray" >Nepal</span>
+                <span>{props.rating}</span>
+                <span className="gray" >({props.reviewCount}) • </span>
+                <span className="gray" >{props.country}</span>
             </div>
-            <h2>Life Lessons with Katie Zaferes</h2>
-            <p><span className="bold">From $136</span> / person</p>
+            <h2>{props.title}</h2>
+            <p><span className="bold">From ${props.price}</span> / person</p>
         </div>
     )
 }

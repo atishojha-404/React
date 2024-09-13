@@ -1,6 +1,6 @@
 import "./Hero.css"
 
-import coverImage from "../assets/cover-image.svg"
+import coverImage from "../../public/assets/cover-image.svg"
 
 export default function Hero() {
     return (
