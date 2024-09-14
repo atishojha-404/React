@@ -1,13 +1,25 @@
 import "./Card.css"
 
-import starImage from "../../public/assets/star.png"
+import starImage from "../assets/star.png"
+
+const imagePath = "./src/assets/"
 
 export default function Card(props) {
+
+    let badgeText
+    if (props.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
+
     return(
         <div className="card">
+            {badgeText && <div className="card--badge">{badgeText}</div>}
             <img 
                 className="card--image" 
-                src={props.img} 
+                src={`${imagePath}${props.coverImg}`}
+                
                 alt="Card Image"
             />
             <div className="card--stats">
@@ -18,7 +30,7 @@ export default function Card(props) {
                 />
                 <span>{props.rating}</span>
                 <span className="gray" >({props.reviewCount}) • </span>
-                <span className="gray" >{props.country}</span>
+                <span className="gray" >{props.location}</span>
             </div>
             <h2>{props.title}</h2>
             <p><span className="bold">From ${props.price}</span> / person</p>
