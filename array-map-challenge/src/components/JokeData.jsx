@@ -2,8 +2,8 @@ export default [
     {
         setup: "I got my daughter a fridge for her birthday.",
         punchline: "I can't wait to see her face light up when she opens it.",
-        upVotes:10,
-        downVotes:2
+        upVotes: 10,
+        downVotes: 2
     },
     {
         setup: "How did the hacker escape the police?",
