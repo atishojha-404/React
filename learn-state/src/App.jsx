@@ -1,25 +1,226 @@
+// import React from "react"
 
+// import "./App.css"
+
+// export default function App() {
+//   const thingsArray = ["Thing 1", "Thing 2"]
+  
+//   const array = thingsArray.map((data) => <p key={data}>{data}</p>)
+
+//   function addItem(){
+//     const arrayLength = thingsArray.length + 1;
+//     const addedThing = "Thing " + arrayLength;
+//     thingsArray.push(addedThing)
+//     console.log(thingsArray)
+//   }
+  
+//   return (
+//       <div>
+//           <button onClick={addItem}>Add Item</button>
+//           {array}
+//       </div>
+//   )
+// }
+
+
+
+// import React from "react"
+
+// import "./App.css"
+
+// export default function App(){
+//     const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
+    
+//     function addItem() {
+//         const newThingText = `Thing ${things.length + 1}`
+//         setThings(prevState => [...prevState, newThingText])
+//     }
+    
+//     const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
+    
+//     return (
+//         <div>
+//             <button onClick={addItem}>Add Item</button>
+//             {thingsElements}
+//         </div>
+//     )
+// }
+
+
+// function addTwoNumbers(a, b) {
+//     a = 42  // Don't do this!
+//     return a + b
+// }
+
+// addTwoNumbers(1, 2)
+
+
+
+
+
+/*
+Challenge: complete the function below
+Given a name, return "Good <timeOfDay>, <name>!" depending
+on the current time of day.
+
+4 am - 11:59 am, timeOfDay = "morning"
+12 pm - 4:59 pm: timeOfDay = "afternoon"
+5 pm - 7:59 pm: timeOfDay = "evening"
+8 pm - 3:59 am: timeOfDay = "night"
+
+E.g. if it's currently 1 pm, greeting("Jane") ==> "Good afternoon, Jane!"
+
+Hint: you can get the current time of day by using: 
+
+const date = new Date()
+const hours = date.getHours()
+*/
+
+
+// import React from "react"
+
+// import "./App.css"
+
+// export default function App(){
+
+//     function greeting(name) {
+//         const date = new Date()
+//         const hours = date.getHours()
+
+//         console.log(`Current hours = ${hours}`)
+
+//         let greetings
+
+//         if(hours >= 4 && hours < 12){
+//             greetings = "morning"
+//         }else if(hours >= 12 && hours < 17){
+//             greetings = "afternoon"
+//         }else if(hours >= 17 && hours < 20){
+//             greetings = "evening"
+//         }else{
+//             greetings = "night"
+//         }
+
+//         return `Good ${greetings}, ${name}!`
+//     }
+
+//     return (
+//         greeting("Atish")
+//     )
+
+// }
+
+
+// Q&N
+
+// 1. How would you describe the concept of "state"?
+// A way for React to remember saved values from within a component.
+// This is similar to declaring variables from within a component,
+// with a few added bonuses (which we'll get to later)
+
+
+// 2. When would you want to use props instead of state?
+// Anytime you want to pass data into a component so that
+// component can determine what will get displayed on the
+// screen.
+
+
+// 3. When would you want to use state instead of props?
+// Anytime you want a component to maintain some values from
+// within the component. (And "remember" those values even
+// when React re-renders the component).
+
+
+// 4. What does "immutable" mean? Are props immutable? Is state immutable?
+// Unchanging. Props are immutable. State is mutable.
+
+
+
+
+// Challenge: 1
+
+/**
+     * Challenge: Replace our hard-coded "Yes" on the page with 
+     * some state initiated with React.useState()
+     */
+
+
+// import {useState} from "react"
+
+// import "./App.css"
+
+// export default function App() {
+    
+//     const [isImportant, fun] = useState("NO")
+//     console.log(isImportant)
+//     return (
+//         <div className="state">
+//             <h1 className="state--title">Is state important to know?</h1>
+//             <div className="state--value">
+//                 <h1>{isImportant}</h1>
+//             </div>
+//         </div>
+//     )
+// }
+
+
+/**
+     * Challenge: 2 
+     * 1. Create a function called `handleClick` that runs
+     *    setIsImportant("No")
+     * 2. add a click event listener to the div.state--value
+     *    that runs `handleClick` when the div is clicked.
+     */
+
+
+// import { useState } from "react";
+// import "./App.css"
+
+// export default function App() {
+
+//     const [isImportant, setIsImportant] = useState("Yes")
+
+
+//     function handleClick() {
+//         if(isImportant == "Yes"){
+//             setIsImportant("No")
+//         }else{
+//             setIsImportant("Yes")
+//         }        
+//     }    
+    
+//     return (
+//         <div className="state">
+//             <h1 className="state--title">Is state important to know?</h1>
+//             <div onClick={handleClick} className="state--value">
+//                 <h1>{isImportant}</h1>
+//             </div>
+//         </div>
+//     )
+// }
+
+
+
+
+
+/**
+     * Challenge: 3
+     *  Set up state to track our count (initial value is 0)
+     */
+
+
+import {useState} from "react"
 import "./App.css"
 
 export default function App() {
-  const thingsArray = ["Thing 1", "Thing 2"]
-  
-  const array = thingsArray.map((data) => {
-      return data;
-  })
-
-  /**
-   * Challenge: Map over the thingsArray to generate
-   * a <p> element for each item and render them on the page
-   * below the button
-   */
-  
-  return (
-      <div>
-          <button>Add Item</button>
-          <p>{array[0]}</p>
-          <p>{array[1]}</p>
-          {/* Insert the things here*/}
-      </div>
-  )
+    
+    return (
+        <div className="counter">
+            <button className="counter--minus">–</button>
+            <div className="counter--count">
+                <h1>0</h1>
+            </div>
+            <button className="counter--plus">+</button>
+        </div>
+    )
 }
