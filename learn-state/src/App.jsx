@@ -1,3 +1,5 @@
+// challenge *
+
 // import React from "react"
 
 // import "./App.css"
@@ -22,6 +24,9 @@
 //   )
 // }
 
+
+
+// challenge *
 
 
 // import React from "react"
@@ -268,3 +273,94 @@ const hours = date.getHours()
 // 3. When would you want to pass the second option (from answer
 //    above) to the state setter function?
 // Whenever you DO need the previous value to determine the new value
+
+
+
+
+/**
+      * Challenge: 4
+      * 
+      * Replace the if/else below with a ternary
+      * to determine the text that should display on the page
+      */
+
+// import "./App.css"
+
+// export default function App() {
+
+//      const isGoingOut = false
+
+//      // let answer = isGoingOut ? "Yes" : "No"
+     
+//      return (
+//          <div className="state">
+//              <h1 className="state--title">Do I feel like going out tonight?</h1>
+//              <div className="state--value">
+//                {/* <h1>{answer}</h1> */}
+//                <h1>{isGoingOut ? "Yes" : "No"}</h1>
+//              </div>
+//          </div>
+//      )
+//  }
+
+
+
+ /**
+     * Challenge: 5
+     * - Initialize state for `isGoingOut` as a boolean
+     * - Make it so clicking the div.state--value flips that
+     *   boolean value (true -> false, false -> true)
+     * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
+     */
+    
+
+
+// import { useState } from "react"
+// import "./App.css"
+
+// export default function App() {
+
+//      const [isGoingOut, setIsGoingOut] = useState(true);
+
+//      function answer() {
+//           setIsGoingOut(prevState => !prevState)
+//       }
+     
+//      return (
+//          <div className="state">
+//              <h1 className="state--title">Do I feel like going out tonight?</h1>
+//              <button onClick={answer} className="state--value">
+//                {isGoingOut ? "Yes" : "No"}
+//              </button>
+//          </div>
+//      )
+//  }
+
+
+
+
+// challenge *
+
+
+
+
+import React from "react"
+
+import "./App.css"
+
+export default function App(){
+    const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
+    
+    function addItem() {
+        setThings(prevState => [...prevState, `Thing ${things.length + 1}`])
+    }
+    
+    const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
+    
+    return (
+        <div>
+            <button onClick={addItem}>Add Item</button>
+            {thingsElements}
+        </div>
+    )
+}

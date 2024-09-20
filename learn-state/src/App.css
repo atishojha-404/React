@@ -1,4 +1,9 @@
-/* button {
+
+/* Challenge * */
+
+
+
+button {
     width: 100%;
     background-color: transparent;
     padding: 1rem;
@@ -17,12 +22,12 @@ button:hover {
 
 button:focus {
     outline: 0;
-} */
+}
 
 
 
 
-/* Challenge: 1, 2,*/
+/* Challenge: 1, 2, 4, 5, */
 
 /* body {
     margin: 0;
@@ -55,6 +60,10 @@ button:focus {
     justify-content: center;
     align-items: center;
     color: #262626;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
 } */
 
 
