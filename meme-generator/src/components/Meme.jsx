@@ -16,13 +16,24 @@ export default function Meme() {
      *   src to the new `memeImage` state you created
      */
 
-    const [memeImage, setMemeImage] = useState("")
+    // const [memeImage, setMemeImage] = useState("http://i.imgflip.com/1bij.jpg")
+
+    const [meme, setMeme] = useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg"
+    })
+
+    const [allMemesImages, setAllMemesImages] = useState(MemeData)
 
     function getMemeImage() {
-        const memesArray = MemeData.data.memes
+        const memesArray = allMemesImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        // const url = memesArray[randomNumber].url
-        setMemeImage(memesArray[randomNumber].url)
+        const url = memesArray[randomNumber].url
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: url
+        }))
     }
     
 
@@ -53,7 +64,7 @@ export default function Meme() {
                 >
                     Get a new meme image 🖼
                 </button>
-                <img src={memeImage} className="meme--image"/>
+                <img src={meme.randomImage} className="meme--image"/>
             </div>
         </main>
     )

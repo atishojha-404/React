@@ -1,11 +1,13 @@
 main {
     padding: 36px;
+    background-color: white;
 }
 
 .form {
     display: grid;
     grid-template: 40px 40px / 1fr 1fr;
     gap: 17px;
+    margin-bottom: 17px;
 }
 
 .form--input {
@@ -28,5 +30,7 @@ main {
 }
 
 .meme--image {
+    grid-column: 1 / -1;
     max-width: 100%;
+    border-radius: 3px;
 }
